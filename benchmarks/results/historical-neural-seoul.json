@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "status": "archived experimental neural results; not the current exact matcher",
+  "source": {
+    "provider": "Seoul Metropolitan Government",
+    "dataset_url": "https://data.seoul.go.kr/dataList/OA-1095/L/1/datasetView.do",
+    "license": "Korea Open Government License Type 1 (attribution)",
+    "snapshot": "2026-09-02",
+    "workbook_sha256": "b54816e9b7e77bcf49dd7562b993db06a093daa666351f115ea4d1dd0dd8b1df",
+    "redistribution": "No raw or processed source dataset is included in this repository."
+  },
+  "provenance_sha256": {
+    "evaluation_report": "53a712004ad046ae85a397889af5c686d2a830ea8f6722343297c67821c004a6",
+    "raw_audit_report": "20b0dd9e282d2b61342b8ab59416b7b404c808acde368f3acb4fc6ede9016cac",
+    "training_report": "dbe25fba95484d24cb3763c5cc014f4967996a62171cf324c2d84f53e13e852a",
+    "evaluated_model": "1fa6c77ac3a4030c06d44bc169997cf5925beb957e8d653d920a6a6f70779816"
+  },
+  "corpus": {
+    "planned_original_records": 707,
+    "planned_test_parents": 103,
+    "synthetic_reverse_decoys": 103,
+    "total_documents": 206,
+    "query_parent_candidates": 102,
+    "excluded_duplicate_train_val_topology_parents": 1,
+    "queries_with_exact_subpath_seen_in_train_or_val": 3
+  },
+  "training": {
+    "optimization_steps": 600,
+    "selected_step": 550,
+    "selected_validation_loss": 0.4142773548762004,
+    "train_patterns": 493,
+    "validation_patterns": 111,
+    "selection": "minimum fixed validation contrastive loss; no test-based checkpoint selection"
+  },
+  "metrics": [
+    {
+      "method": "learned_whole",
+      "scenario": "clean_source_crop",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.9019607843137255,
+        "at_5": 0.9901960784313726,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.0,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0891089108910891,
+        "paired_reverse_top1_rate": 0.07920792079207921
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.9051553205551883,
+        "hit_at_5_coverage_gte_0_5": 0.9901960784313726
+      }
+    },
+    {
+      "method": "learned_shared",
+      "scenario": "clean_source_crop",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.6470588235294118,
+        "at_5": 0.9901960784313726,
+        "at_10": 0.9901960784313726
+      },
+      "top_score_tie_query_rate": 0.37254901960784315,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.039603960396039604,
+        "paired_reverse_top1_rate": 0.0297029702970297
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.7028712457961194,
+        "hit_at_5_coverage_gte_0_5": 0.9901960784313726
+      }
+    },
+    {
+      "method": "directed_exact_contiguous",
+      "scenario": "clean_source_crop",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.9901960784313726,
+        "at_5": 1.0,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.00980392156862745,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0,
+        "paired_reverse_top1_rate": 0.0
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 1.0,
+        "hit_at_5_coverage_gte_0_5": 1.0
+      }
+    },
+    {
+      "method": "geographic_shared",
+      "scenario": "clean_source_crop",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.5784313725490197,
+        "at_5": 0.9411764705882353,
+        "at_10": 0.9607843137254902
+      },
+      "top_score_tie_query_rate": 0.4117647058823529,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.16831683168316833,
+        "paired_reverse_top1_rate": 0.1188118811881188
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.6348574356204997,
+        "hit_at_5_coverage_gte_0_5": 0.9411764705882353
+      }
+    },
+    {
+      "method": "untrained_whole",
+      "scenario": "clean_source_crop",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.6666666666666666,
+        "at_5": 0.9901960784313726,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.0,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.2871287128712871,
+        "paired_reverse_top1_rate": 0.25742574257425743
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.6676633247567505,
+        "hit_at_5_coverage_gte_0_5": 0.9901960784313726
+      }
+    },
+    {
+      "method": "untrained_shared",
+      "scenario": "clean_source_crop",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.5980392156862745,
+        "at_5": 1.0,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.38235294117647056,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0891089108910891,
+        "paired_reverse_top1_rate": 0.07920792079207921
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.652042405486728,
+        "hit_at_5_coverage_gte_0_5": 1.0
+      }
+    },
+    {
+      "method": "learned_whole",
+      "scenario": "renamed_ids",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.9019607843137255,
+        "at_5": 0.9901960784313726,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.0,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0891089108910891,
+        "paired_reverse_top1_rate": 0.07920792079207921
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.9051553205551883,
+        "hit_at_5_coverage_gte_0_5": 0.9901960784313726
+      }
+    },
+    {
+      "method": "learned_shared",
+      "scenario": "renamed_ids",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.6470588235294118,
+        "at_5": 0.9901960784313726,
+        "at_10": 0.9901960784313726
+      },
+      "top_score_tie_query_rate": 0.37254901960784315,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.039603960396039604,
+        "paired_reverse_top1_rate": 0.0297029702970297
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.7028712457961194,
+        "hit_at_5_coverage_gte_0_5": 0.9901960784313726
+      }
+    },
+    {
+      "method": "directed_exact_contiguous",
+      "scenario": "renamed_ids",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.0,
+        "at_5": 0.0,
+        "at_10": 0.0
+      },
+      "top_score_tie_query_rate": 1.0,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0,
+        "paired_reverse_top1_rate": 0.009900990099009901
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.0,
+        "hit_at_5_coverage_gte_0_5": 0.0
+      }
+    },
+    {
+      "method": "geographic_shared",
+      "scenario": "renamed_ids",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.5784313725490197,
+        "at_5": 0.9411764705882353,
+        "at_10": 0.9607843137254902
+      },
+      "top_score_tie_query_rate": 0.4117647058823529,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.16831683168316833,
+        "paired_reverse_top1_rate": 0.1188118811881188
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.6348574356204997,
+        "hit_at_5_coverage_gte_0_5": 0.9411764705882353
+      }
+    },
+    {
+      "method": "untrained_whole",
+      "scenario": "renamed_ids",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.6666666666666666,
+        "at_5": 0.9901960784313726,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.0,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.2871287128712871,
+        "paired_reverse_top1_rate": 0.25742574257425743
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.6676633247567505,
+        "hit_at_5_coverage_gte_0_5": 0.9901960784313726
+      }
+    },
+    {
+      "method": "untrained_shared",
+      "scenario": "renamed_ids",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.5980392156862745,
+        "at_5": 1.0,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.38235294117647056,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0891089108910891,
+        "paired_reverse_top1_rate": 0.07920792079207921
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.652042405486728,
+        "hit_at_5_coverage_gte_0_5": 1.0
+      }
+    },
+    {
+      "method": "learned_whole",
+      "scenario": "renamed_ids_and_coordinate_noise",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.9019607843137255,
+        "at_5": 1.0,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.0,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0891089108910891,
+        "paired_reverse_top1_rate": 0.0891089108910891
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.9051553205551883,
+        "hit_at_5_coverage_gte_0_5": 1.0
+      }
+    },
+    {
+      "method": "learned_shared",
+      "scenario": "renamed_ids_and_coordinate_noise",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.7941176470588235,
+        "at_5": 0.9901960784313726,
+        "at_10": 0.9901960784313726
+      },
+      "top_score_tie_query_rate": 0.058823529411764705,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0594059405940594,
+        "paired_reverse_top1_rate": 0.04950495049504951
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.8293395367138138,
+        "hit_at_5_coverage_gte_0_5": 0.9901960784313726
+      }
+    },
+    {
+      "method": "directed_exact_contiguous",
+      "scenario": "renamed_ids_and_coordinate_noise",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.0,
+        "at_5": 0.0,
+        "at_10": 0.0
+      },
+      "top_score_tie_query_rate": 1.0,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0,
+        "paired_reverse_top1_rate": 0.009900990099009901
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.0,
+        "hit_at_5_coverage_gte_0_5": 0.0
+      }
+    },
+    {
+      "method": "geographic_shared",
+      "scenario": "renamed_ids_and_coordinate_noise",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.7450980392156863,
+        "at_5": 0.9411764705882353,
+        "at_10": 0.9607843137254902
+      },
+      "top_score_tie_query_rate": 0.049019607843137254,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.1782178217821782,
+        "paired_reverse_top1_rate": 0.12871287128712872
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.7775207814549026,
+        "hit_at_5_coverage_gte_0_5": 0.9411764705882353
+      }
+    },
+    {
+      "method": "untrained_whole",
+      "scenario": "renamed_ids_and_coordinate_noise",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.6666666666666666,
+        "at_5": 0.9901960784313726,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.0,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.3069306930693069,
+        "paired_reverse_top1_rate": 0.25742574257425743
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.6668589004229142,
+        "hit_at_5_coverage_gte_0_5": 0.9901960784313726
+      }
+    },
+    {
+      "method": "untrained_shared",
+      "scenario": "renamed_ids_and_coordinate_noise",
+      "query_count": 102,
+      "known_parent_recall": {
+        "at_1": 0.7549019607843137,
+        "at_5": 1.0,
+        "at_10": 1.0
+      },
+      "top_score_tie_query_rate": 0.049019607843137254,
+      "direction_stress": {
+        "eligible_query_count": 101,
+        "paired_reverse_outranks_parent_rate": 0.0891089108910891,
+        "paired_reverse_top1_rate": 0.0891089108910891
+      },
+      "rule_defined_shared_segment_relevance": {
+        "mean_top1_directed_query_coverage": 0.7935473488271825,
+        "hit_at_5_coverage_gte_0_5": 1.0
+      }
+    }
+  ],
+  "full_route_cross_route_examples": [
+    {
+      "query_route": "750A",
+      "target_route": "750B",
+      "target_rank_excluding_self": 27,
+      "query_training_split": "train"
+    },
+    {
+      "query_route": "702A",
+      "target_route": "702B",
+      "target_rank_excluding_self": 3,
+      "query_training_split": "train"
+    },
+    {
+      "query_route": "6411",
+      "target_route": "8641",
+      "target_rank_excluding_self": 4,
+      "query_training_split": "train"
+    }
+  ],
+  "limitations": [
+    "The neural shared scorer maximized one local chunk cosine; short identical chunks could saturate near 1 and hide longer overlap.",
+    "750A to 750B ranked 27th despite 72 consecutive shared directed edges. This negative result is retained.",
+    "Crops and noise are generated, not independent human relevance labels. Three cropped query sequences also occur in train/validation routes.",
+    "Full-route illustrative queries were training routes. They are not held-out generalization results.",
+    "Exact known-ID overlap addresses a different task from learned coordinate-robust retrieval; comparing the two is not a claim of improved neural quality."
+  ]
+}

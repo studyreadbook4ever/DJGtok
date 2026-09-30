@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "task": "exact consecutive directed stop-ID+mode matching",
+  "environment": {
+    "python": "3.12.13",
+    "implementation": "CPython",
+    "os": "Linux",
+    "machine": "x86_64",
+    "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz",
+    "logical_cpu_count": 16,
+    "package_versions": {
+      "numpy": "2.5.3",
+      "pydantic": "2.13.5",
+      "djgtok": "source-checkout-not-installed"
+    }
+  },
+  "source": {
+    "provider": "Seoul Metropolitan Government",
+    "dataset_url": "https://data.seoul.go.kr/dataList/OA-1095/L/1/datasetView.do",
+    "license": "Korea Open Government License Type 1 (attribution)",
+    "snapshot": "2026-09-02",
+    "workbook_sha256": "b54816e9b7e77bcf49dd7562b993db06a093daa666351f115ea4d1dd0dd8b1df",
+    "redistribution": "No raw or processed source dataset is included in this repository."
+  },
+  "processed_dataset_sha256": "21afdce7fe775ac0197ce7c73b4e338479316dc42d68768bfeb014bbe1498e42",
+  "corpus": {
+    "journeys": 707,
+    "stop_rows": 40883,
+    "edges": 40176
+  },
+  "index_build_ms": 551.581039,
+  "full_route_cases": [
+    {
+      "query_route": "750A",
+      "target_route": "750B",
+      "query_is_full_source_route": true,
+      "self_excluded": true,
+      "target_rank": 1,
+      "target_shared_edges": 72,
+      "query_edge_count": 82,
+      "target_edge_count": 75,
+      "target_query_coverage": 0.8780487804878049,
+      "target_document_coverage": 0.96,
+      "independent_oracle_max_shared_edges": 72,
+      "longest_shared_corridor_ranked_first": true,
+      "target_precedes_every_shorter_match": true,
+      "full_stop_sequences_identical": false
+    },
+    {
+      "query_route": "702A",
+      "target_route": "702B",
+      "query_is_full_source_route": true,
+      "self_excluded": true,
+      "target_rank": 1,
+      "target_shared_edges": 57,
+      "query_edge_count": 78,
+      "target_edge_count": 79,
+      "target_query_coverage": 0.7307692307692307,
+      "target_document_coverage": 0.7215189873417721,
+      "independent_oracle_max_shared_edges": 57,
+      "longest_shared_corridor_ranked_first": true,
+      "target_precedes_every_shorter_match": true,
+      "full_stop_sequences_identical": false
+    },
+    {
+      "query_route": "6411",
+      "target_route": "8641",
+      "query_is_full_source_route": true,
+      "self_excluded": true,
+      "target_rank": 1,
+      "target_shared_edges": 46,
+      "query_edge_count": 116,
+      "target_edge_count": 116,
+      "target_query_coverage": 0.39655172413793105,
+      "target_document_coverage": 0.39655172413793105,
+      "independent_oracle_max_shared_edges": 46,
+      "longest_shared_corridor_ranked_first": true,
+      "target_precedes_every_shorter_match": true,
+      "full_stop_sequences_identical": false
+    }
+  ],
+  "full_route_search_latency": {
+    "median_ms": 12.697995500000001,
+    "p95_ms": 15.653633,
+    "sample_count": 30,
+    "warmup_passes": 3,
+    "measured_passes": 10,
+    "queries_per_pass": 3,
+    "p95_convention": "nearest rank",
+    "scope": "in-process query search and hit construction; excludes JSONL loading and index construction"
+  },
+  "generated_crop_cohort": {
+    "protocol": {
+      "seed": 42,
+      "max_queries": 200,
+      "partition_counts": {
+        "train": 493,
+        "val": 111,
+        "test": 103
+      },
+      "excluded_full_coordinate_topology_duplicates": 1,
+      "query_count": 102,
+      "split_rule": "sha256('transitvec-v1:' + route_group), first 8 hex digits modulo 100; <70 train, <85 val, otherwise test",
+      "interpretation": "Historical route-group test cohort replay only; exact matcher has no training or model selection stage."
+    },
+    "corpus_real_routes": 103,
+    "synthetic_reverse_decoys": 103,
+    "known_parent_recall_at_1": 1.0,
+    "known_parent_recall_at_5": 1.0,
+    "known_parent_hits_at_1": 102,
+    "known_parent_hits_at_5": 102,
+    "strict_reverse_eligible_queries": 101,
+    "paired_reverse_outranks_parent_count": 0,
+    "paired_zero_overlap_reverse_returned_in_top5_count": 0,
+    "latency": {
+      "median_ms": 4.5637895,
+      "p95_ms": 12.3809,
+      "sample_count": 1020,
+      "warmup_passes": 3,
+      "measured_passes": 10,
+      "queries_per_pass": 102,
+      "p95_convention": "nearest rank",
+      "scope": "in-process query search and hit construction; excludes JSONL loading and index construction"
+    },
+    "limitations": [
+      "Known-parent labels are generated from exact source crops; alternative documents can be equally correct.",
+      "Direction checks include only pairs with zero matching oriented edge in the clean query's paired reversal.",
+      "These are rule-defined structural checks, not independent human relevance or statistical generalization claims."
+    ]
+  },
+  "limitations": [
+    "This is a deterministic known-ID overlap task, not a neural quality improvement or semantic similarity benchmark.",
+    "Canonical stop namespaces and mode labels must agree; renamed IDs with equal coordinates are not equivalent inputs.",
+    "The source contains route stop sequences, not verified timetables, road shapes, transfer feasibility, or passenger preference labels.",
+    "Recorded timings are warm local measurements on this corpus, not all-city scale guarantees or route-planning latency.",
+    "No raw source data, complete journeys, actual stop lists, coordinates, or model weights are redistributed."
+  ]
+}

@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv*/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+.env
+.env.*
+!.env.example
+# User-supplied feeds, observations, checkpoints and local experiment products.
+data/
+artifacts/
+*.pt
+*.pth
+*.npy
+*.npz
+*.xlsx
+*.zip
+*.jsonl
+*.log
+.DS_Store
